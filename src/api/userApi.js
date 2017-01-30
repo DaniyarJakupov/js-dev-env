@@ -1,11 +1,14 @@
 import 'whatwg-fetch';
+import getBaseUrl from './baseUrl';
 
-export function getPosts(){
-   return get('https://blogappv2.herokuapp.com/posts');
+const baseUrl = getBaseUrl();
+
+export function getUsers(){
+   return get('users');
 }
 
 function get(url){
-   return fetch(url).then(onSuccess, onError);
+   return fetch(baseUrl + url).then(onSuccess, onError);
 }
 
 function onSuccess(response){

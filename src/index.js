@@ -1,18 +1,18 @@
 import './index.css';
-import {getPosts} from './api/postsApi';
+import {getUsers} from './api/userApi';
 
-getPosts().then(result => {
-   let postsBody = "";
+getUsers().then(result => {
+   let usersBody = "";
 
-   result.forEach(post => {
-      postsBody+= `<tr>
-         <td><a href="#" data-id="${post.id}" class="deletePost"> Delete </a></td?>
-         <td>${post._id.substring(0,5)}</td>
-         <td>${post.title.substring(0,10)}</td>
-         <td>${post.image.substring(0,10)}</td>
-         <td>${post.created.substring(0,10)}</td>
+   result.forEach(user => {
+      usersBody+= `<tr>
+         <td><a href="#" data-id="${user.id}" class="deleteUser"> Delete </a></td?>
+         <td>${user.id}</td>
+         <td>${user.firstName}</td>
+         <td>${user.lastName}</td>
+         <td>${user.email}</td>
       </tr>`
    });
 
-   global.document.getElementById("posts").innerHTML = postsBody;
+   global.document.getElementById("users").innerHTML = usersBody;
 });

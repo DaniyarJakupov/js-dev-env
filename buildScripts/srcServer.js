@@ -19,9 +19,9 @@ app.get('/', (req, res) => {
 });
 app.get('/users', (req, res) => {
    res.json([
-      {"id": 1, "firstName": "Luke", "lastName":"Skywalker"},
-      {"id": 2, "firstName": "Leia", "lastName":"Organa"},
-      {"id": 3, "firstName": "Obi-Wan", "lastName":"Kenobi"}
+      {"id": 1, "firstName": "Luke", "lastName":"Skywalker", "email": "luke@mail.com"},
+      {"id": 2, "firstName": "Leia", "lastName":"Organa", "email": "leia@mail.com"},
+      {"id": 3, "firstName": "Obi-Wan", "lastName":"Kenobi", "email": "obi@mail.com"}
    ]);
 });
 //==========================================
