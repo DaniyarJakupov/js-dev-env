@@ -1,6 +1,18 @@
 import './index.css';
-import numeral from 'numeral';
+import {getPosts} from './api/postsApi';
 
-const value = numeral(1000).format('$0,0.00');
-debugger; // eslint-disable-line no-debugger
-console.log(`I would pay ${value} for this`); // eslint-disable-line no-console
+getPosts().then(result => {
+   let postsBody = "";
+
+   result.forEach(post => {
+      postsBody+= `<tr>
+         <td><a href="#" data-id="${post.id}" class="deletePost"> Delete </a></td?>
+         <td>${post._id.substring(0,5)}</td>
+         <td>${post.title.substring(0,10)}</td>
+         <td>${post.image.substring(0,10)}</td>
+         <td>${post.created.substring(0,10)}</td>
+      </tr>`
+   });
+
+   global.document.getElementById("posts").innerHTML = postsBody;
+});
