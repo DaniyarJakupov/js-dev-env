@@ -5,3 +5,12 @@ body {
 h1 {
    color: steelblue;
 }
+
+th {
+   background-color: crimson;
+   width: 100px;
+}
+td {
+   width: 100px;
+   text-align: center;
+}
